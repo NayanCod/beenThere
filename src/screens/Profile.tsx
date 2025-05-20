@@ -134,7 +134,7 @@ const Profile = ({navigation}) => {
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>
-              {profile?.first_name}'s Highlights
+              {profile?.full_name}'s Highlights
             </Text>
             <TouchableOpacity
               style={styles.compareButton}
@@ -231,7 +231,7 @@ const Profile = ({navigation}) => {
           onPress={() => setShowTopDestinations(true)}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>
-              {profile?.first_name}'s Top Destinations
+              {profile?.full_name}'s Top Destinations
             </Text>
           </View>
           <View style={styles.tabsContainer}>
@@ -271,7 +271,7 @@ const Profile = ({navigation}) => {
           <View>
             <View style={styles.sectionHeader}>
               <Text style={styles.sectionTitle}>
-                {profile?.first_name}'s Wishlist
+                {profile?.full_name}'s Wishlist
               </Text>
             </View>
             <View style={styles.wishlistContainer}>
@@ -314,7 +314,7 @@ const Profile = ({navigation}) => {
         <TouchableOpacity style={styles.seeWhereButton}  onPress={() => navigation.navigate('Passport')}>
           <View style={styles.seeWhereContainer}>
             <Text style={styles.seeWhereButtonText}>
-              See Where {profile?.first_name} Has Been
+              See Where {profile?.full_name} Has Been
             </Text>
             <View style={styles.iconWrapper}>
               <AntDesign name="arrowright" size={20} color="black" />
