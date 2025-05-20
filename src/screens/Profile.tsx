@@ -45,6 +45,7 @@ const Profile = ({navigation}) => {
     try {
       setLoading(true);
       const response = await getProfile();
+      console.log('Profile response:', response);
 
       if (response.success) {
         setProfile(response?.data?.user);
@@ -310,7 +311,7 @@ const Profile = ({navigation}) => {
         </View>
 
         {/* See Where Button */}
-        <TouchableOpacity style={styles.seeWhereButton}>
+        <TouchableOpacity style={styles.seeWhereButton}  onPress={() => navigation.navigate('Passport')}>
           <View style={styles.seeWhereContainer}>
             <Text style={styles.seeWhereButtonText}>
               See Where {profile?.first_name} Has Been

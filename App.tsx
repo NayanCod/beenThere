@@ -21,6 +21,8 @@ import CustomRating from './src/screens/CustomRating';
 import Passport from './src/screens/Passport';
 import Map from './src/screens/Map';
 import { getToken } from './utils/token';
+import Message from './src/screens/Message';
+import MessageInner from './src/screens/MessageInner';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => (
@@ -30,6 +32,7 @@ const AuthStack = () => (
     <Stack.Screen name="SignUp" component={SignUp} />
     <Stack.Screen name="SignUp1" component={SignUp1} />
     <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+    <Stack.Screen name="TabNavigation" component={TabNavigation} />
   </Stack.Navigator>
 );
 
@@ -46,6 +49,8 @@ const MainStack = () => (
     <Stack.Screen name="CustomRating" component={CustomRating} />
     <Stack.Screen name="Passport" component={Passport} />
     <Stack.Screen name="Map" component={Map} />
+    <Stack.Screen name="Message" component={Message} />
+    <Stack.Screen name="MapInner" component={MessageInner} />
   </Stack.Navigator>
 );
 

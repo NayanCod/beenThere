@@ -145,9 +145,9 @@ const EditProfileScreen = ({ navigation }) => {
         message_request: formData.message_request,
         instagram_sync: formData.instagram_sync,
         contact_sync: formData.contact_sync,
-        notification_type: notificationType || '0',
+        notification_type: notificationType || '1',
       };
-
+      console.log("updatedProfile:",updatedProfile);
       const response = await editProfile(updatedProfile);
 
       if (response.success) {

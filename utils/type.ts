@@ -16,8 +16,8 @@ export interface Post {
   user_id: string;              // UUID
   createdAt: number;            // BIGINT timestamp
   updatedAt: number;
-  user?: User;                  // Associated user
-  photos?: Photo[];             // Associated photos
+  User?: User;                  // Associated user
+  Photos?: Photo[];             // Associated photos
   created_at_formatted?: string;
   visit_date_formatted?: string;
 }
@@ -110,4 +110,3 @@ export interface CreateCommentInput {
   post_id: string;
   comment: string;
 }
-

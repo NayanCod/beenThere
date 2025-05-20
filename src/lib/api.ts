@@ -1,6 +1,8 @@
 import {axiosClient} from './axiosClient';
 
 export const login = async (email: string, password: string) => {
+  console.log('email', email);
+  console.log('password', password);
   const res = await axiosClient.post('/auth/login', {
     email,
     password,
@@ -81,12 +83,12 @@ export const verifyOtp = async (email: string, otp: string) => {
 };
 
 export const getProfile = async () => {
-  const res = await axiosClient.get('/auth/getProfile');
+  const res = await axiosClient.get('/auth/profile');
   return res.data;
 };
 
 export const editProfile = async ({full_name, phone, email, address, public_profile, location_sharing, message_request, instagram_sync, contact_sync, notification_type}: any) => {
-  const res = await axiosClient.post('/auth/editProfile', {
+  const res = await axiosClient.put('/auth/editProfile', {
     full_name,
     phone,
     email,
@@ -134,18 +136,21 @@ export const getFollowingPosts = async (page = 1, limit = 10) => {
 };
 
 export const getPostDetails = async (postId: string, page = 1, limit = 10) => {
-  const res = await axiosClient.get(`/posts/${postId}`, {
+  console.log('Post details:', postId);
+  const res = await axiosClient.get(`/post/${postId}`, {
     params: {
       page: page,
       limit: limit,
     },
   });
+  console.log('Post details:', res.data);
   return res.data;
 };
 
-export const createPost = async ({country, visit_date, reason_for_visit, overall_rating, experience, cost_rating, safety_rating, food_rating, place_type, longitude, latitude} : any) => {
-    const res = await axiosClient.post('/posts', {
+export const createPost = async ({country, city, visit_date, reason_for_visit, overall_rating, experience, cost_rating, safety_rating, food_rating, place_type, longitude, latitude} : any) => {
+    const res = await axiosClient.post('/post', {
         country,
+        city,
         visit_date,
         reason_for_visit,
         overall_rating,
@@ -158,4 +163,5 @@ export const createPost = async ({country, visit_date, reason_for_visit, overall
         latitude,
     });
     return res.data;
-}
+};
+
